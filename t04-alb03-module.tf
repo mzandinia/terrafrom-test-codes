@@ -38,6 +38,12 @@ module "alb" {
         protocol            = "HTTP"
         matcher             = "200-399"
       }
+
+      stickiness = {
+        enabled = true
+        type    = "lb_cookie"
+      }
+
       protocol_version = "HTTP1"
 
       # App1 Target Group - Targets
